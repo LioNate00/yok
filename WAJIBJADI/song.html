@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <title> final!! </title>
+    <center>
+
+        <body>
+        <audio controls autoplay>
+            <source src="song.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+            var audio = document.getElementsByTagName("audio")[0];
+
+            audio.volume = 0.2; 
+            audio.addEventListener('loadedmetadata', function() {
+            audio.currentTime = 0;
+            audio.addEventListener('timeupdate', function() {
+
+                   
+            });
+        });
+          </script>
+          <style>
+            body{ background-image:url(E.jpeg);
+                background-position: center;
+                background-attachment: fixed;
+                background-size: auto;
+                background-repeat: no-repeat;
+
+            }
+            p {
+                color: rgb(0, 0, 0);
+                font-size: 100%;
+                font-weight: bolder;
+            }
+          </style>
+            
+            <p> <br> <br> <br> <br> Gimana?? wkkwkwk, aku pengen serius sama kamu <br>
+                Aku Euaggelion Nathan menginginkan kamu Yuki Nolanda (udah kek nikahan aja) sebagai kekasih aku <br>
+                mulai tanggal
+
+                <body>
+                    <p id="tanggal"></p>
+                
+                    <script>
+                        // Mendapatkan tanggal saat program dijalankan
+                        var today = new Date();
+                        var date = today.getDate();
+                        var month = today.getMonth() + 1;
+                        var year = today.getFullYear();
+                
+                        // Format tanggal menjadi "DD/MM/YYYY"
+                        if (date < 10) {
+                            date = "0" + date;
+                        }
+                        if (month < 10) {
+                            month = "0" + month;
+                        }
+                        var tanggal = date + "/" + month + "/" + year;
+                
+                        // Menampilkan tanggal pada halaman HTML
+                        document.getElementById("tanggal").innerHTML = tanggal;
+                    </script>
+                </body>
+                
+            </p>
+    <body>
+        <p Waktu yang ditetapkan: id="waktu"> </p>
+
+        <script>
+            // Mengatur waktu pada objek Date
+            var waktu = new Date();
+            var zonaWaktu = waktu.getTimezoneOffset(); // Menentukan zona waktu pengguna dalam menit
+
+            // Menambahkan nol pada angka satu digit
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            }
+
+            // Menampilkan waktu pada halaman HTML
+            function displayTime() {
+                var h = waktu.getUTCHours() - (zonaWaktu / 60); // Mengurangi perbedaan zona waktu dengan UTC
+                var m = waktu.getUTCMinutes();
+                var s = waktu.getUTCSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById("waktu").innerHTML = h + ":" + m + ":" + s;
+            }
+
+            // Menampilkan waktu secara real-time dengan interval 1 detik
+            setInterval(function() {
+                waktu.setSeconds(waktu.getSeconds() + 1);
+                displayTime();
+            }, 1000);
+
+            // Menampilkan waktu yang ditetapkan pada halaman HTML
+            displayTime();
+        </script>
+    </body>
+</center>
+    </body>
+</html>
